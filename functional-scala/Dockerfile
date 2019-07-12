@@ -6,4 +6,6 @@ WORKDIR $APPDIR
 
 COPY ./scala-project/build.sbt .
 
+RUN sbt update
+
 CMD ["sbt", "console"]
