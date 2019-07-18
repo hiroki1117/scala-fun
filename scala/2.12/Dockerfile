@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-stretch
+FROM openjdk:8
 
 ENV INSTALL_DIR=/usr/local
 
