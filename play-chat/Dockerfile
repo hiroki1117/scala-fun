@@ -18,13 +18,13 @@ RUN apt-get update \
     && sbt dist \
     && unzip ./target/universal/play-chatroom-scala-example-2.7.x.zip -d ./target/universal
 
-FROM openjdk:8
-
-ENV APP_NAME=play-scala-chatroom
+FROM openjdk:8-jre-alpine
 
 ENV PATH=/execute/bin:$PATH
 
 WORKDIR /execute
+
+RUN apk add --no-chache bash
 
 COPY --from=build /app/target/universal/play-chatroom-scala-example-2.7.x /execute
 
